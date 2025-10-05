@@ -1,13 +1,28 @@
 name: "🐞 Bug report"
-description: "Something isn't working as expected."
+description: "Something isn’t working as expected."
 title: "[bug] <short summary>"
 labels:
   - bug
+  - needs triage
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a bug! Please provide clear repro steps and impact.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Short summary
+      placeholder: "One-line description of the bug"
+    validations:
+      required: true
+
   - type: dropdown
     id: components
     attributes:
       label: Affected component(s)
+      description: "Select all that apply"
       multiple: true
       options:
         - Core App / Client
@@ -22,17 +37,49 @@ body:
       required: true
 
   - type: textarea
-    id: description
+    id: steps
     attributes:
-      label: What happened?
-      description: "Describe the bug, include steps to reproduce if needed"
+      label: Steps to reproduce
+      description: "Numbered list of actions"
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
     validations:
       required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: "What you thought would happen"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      placeholder: "What actually happened (include errors/logs)"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version / Build / Commit
+      placeholder: "e.g., v1.2.3, build #456, or commit SHA"
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment details
+      placeholder: "OS, browser, region, server, config flags, etc."
 
   - type: dropdown
     id: severity
     attributes:
-      label: Severity
+      label: Severity / Impact
       options:
         - S0 - Critical (no workaround)
         - S1 - High (major function broken)
@@ -41,3 +88,23 @@ body:
     validations:
       required: true
 
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Evidence
+      description: "Paste logs, screenshots, or links to failing runs"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context / suspected cause
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checks
+      options:
+        - label: I searched existing issues and discussions
+          required: true
+        - label: I can reproduce this reliably
+          required: false

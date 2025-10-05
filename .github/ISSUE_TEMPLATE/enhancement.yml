@@ -3,14 +3,7 @@ description: "Improve an existing feature or workflow."
 title: "[enhancement] <short summary>"
 labels:
   - enhancement
-  - needs triage
-body:
-  - type: input
-    id: summary
-    attributes:
-      label: One-liner
-    validations:
-      required: true
+  
 
   - type: textarea
     id: current

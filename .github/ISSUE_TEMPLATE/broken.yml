@@ -3,20 +3,13 @@ description: "Something is down or severely degraded."
 title: "[BROKEN] <short summary>"
 labels:
   - broken
-  - needs triage
 body:
   - type: markdown
     attributes:
       value: |
         Use this for outages or critical breakages affecting users or operations.
 
-  - type: input
-    id: summary
-    attributes:
-      label: One-liner
-      placeholder: "e.g., NA game servers unreachable, API 500s, payments failing"
-    validations:
-      required: true
+
 
   - type: dropdown
     id: blast
@@ -51,16 +44,10 @@ body:
       placeholder: "If known; otherwise leave blank"
 
   - type: textarea
-    id: mitigations
-    attributes:
-      label: Mitigations attempted
-      placeholder: "Rollbacks, feature flags, restarts, traffic shifts, etc."
-
-  - type: textarea
     id: impact
     attributes:
       label: Impact
-      placeholder: "User impact, revenue risk, SLA/SLO impact"
+      placeholder: "User impactk, SLA/SLO impact"
 
   - type: checkboxes
     id: paging

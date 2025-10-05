@@ -1,1 +1,43 @@
+name: "🐞 Bug report"
+description: "Something isn't working as expected."
+title: "[bug] <short summary>"
+labels:
+  - bug
+body:
+  - type: dropdown
+    id: components
+    attributes:
+      label: Affected component(s)
+      multiple: true
+      options:
+        - Core App / Client
+        - Backend / API
+        - Game Servers
+        - Infrastructure / DevOps
+        - Docs / Website
+        - Billing / Payments
+        - Customer Portal
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: "Describe the bug, include steps to reproduce if needed"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - S0 - Critical (no workaround)
+        - S1 - High (major function broken)
+        - S2 - Medium (workaround exists)
+        - S3 - Low (minor/edge)
+    validations:
+      required: true
 

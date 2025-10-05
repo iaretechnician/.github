@@ -4,7 +4,7 @@ title: "[feature] <short summary>"
 labels:
   - feature
  
-
+body:
   - type: textarea
     id: problem
     attributes:

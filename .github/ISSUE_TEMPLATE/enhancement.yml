@@ -4,7 +4,8 @@ title: "[enhancement] <short summary>"
 labels:
   - enhancement
 
-body:  - type: textarea
+body:  
+  - type: textarea
     id: current
     attributes:
       label: Current behavior / pain
